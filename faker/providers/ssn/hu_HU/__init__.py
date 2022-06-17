@@ -2,7 +2,7 @@ from functools import reduce
 from math import fmod
 from typing import Optional
 
-from ....typing import GenderType
+from ....typing2 import GenderType
 from .. import Provider as SsnProvider
 
 

@@ -10,7 +10,7 @@ from .config import DEFAULT_LOCALE
 from .exceptions import UniquenessException
 from .factory import Factory
 from .generator import Generator, Sentinel, random
-from .typing import SeedType
+from .typing2 import SeedType
 from .utils.distribution import choices_distribution
 
 _UNIQUE_ATTEMPTS = 1000

@@ -3,7 +3,7 @@ import operator
 
 from typing import List, Optional, Sequence
 
-from ....typing import GenderType
+from ....typing2 import GenderType
 from .. import Provider as SsnProvider
 
 

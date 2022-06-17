@@ -4,7 +4,7 @@ from datetime import date
 from decimal import Decimal
 from typing import Dict, List, Optional, Tuple, Union
 
-from ...typing import GenderType
+from ...typing2 import GenderType
 from .. import BaseProvider
 
 

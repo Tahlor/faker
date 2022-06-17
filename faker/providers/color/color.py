@@ -21,7 +21,7 @@ from typing import TYPE_CHECKING, Dict, Hashable, Optional, Sequence, Tuple
 if TYPE_CHECKING:
     from ...factory import Generator
 
-from ...typing import HueType
+from ...typing2 import HueType
 
 COLOR_MAP: Dict[str, Dict[str, Sequence[Tuple[int, int]]]] = {
     "monochrome": {

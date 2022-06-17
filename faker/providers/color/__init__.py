@@ -1,7 +1,7 @@
 from collections import OrderedDict
 from typing import Dict, Optional
 
-from ...typing import HueType
+from ...typing2 import HueType
 from .. import BaseProvider, ElementsType
 from .color import RandomColor
 

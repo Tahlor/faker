@@ -1,7 +1,7 @@
 from collections import OrderedDict
 from typing import Dict, List, Optional, TypeVar
 
-from ...typing import DateParseType
+from ...typing2 import DateParseType
 from .. import BaseProvider
 
 localized = True

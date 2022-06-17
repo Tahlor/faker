@@ -3,7 +3,7 @@ import warnings
 from datetime import datetime
 from typing import Optional
 
-from ....typing import DateParseType
+from ....typing2 import DateParseType
 from .. import Provider as DateParseTypeProvider
 
 # thai_strftime() code adapted from

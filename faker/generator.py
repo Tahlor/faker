@@ -3,7 +3,7 @@ import re
 
 from typing import TYPE_CHECKING, Any, Callable, Dict, Hashable, List, Optional
 
-from .typing import SeedType
+from .typing2 import SeedType
 
 if TYPE_CHECKING:
     from .providers import BaseProvider

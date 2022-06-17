@@ -2,7 +2,7 @@ import datetime
 
 from typing import List, Optional
 
-from ....typing import GenderType
+from ....typing2 import GenderType
 from .. import Provider as SsnProvider
 
 

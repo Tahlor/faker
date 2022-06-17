@@ -12,7 +12,7 @@ from typing import Any, Callable, Dict, Iterator, Optional, Tuple, Union
 from dateutil import relativedelta
 from dateutil.tz import gettz, tzlocal, tzutc
 
-from ...typing import DateParseType
+from ...typing2 import DateParseType
 from .. import BaseProvider, ElementsType
 
 localized = True
