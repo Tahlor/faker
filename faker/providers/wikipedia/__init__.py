@@ -3,7 +3,7 @@ Finish implementing, add Provider on top of Wikipedia dataset
 
 """
 import random
-
+import datasets
 
 from .. import BaseProvider, ElementsType
 

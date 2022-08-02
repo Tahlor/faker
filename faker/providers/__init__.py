@@ -715,3 +715,50 @@ class DynamicProvider(BaseProvider):
             raise ValueError("Elements should be a list of values the provider samples from")
 
         return self.random_element(self.elements)
+
+
+class HierarchicalProvider(BaseProvider):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.use_or = True
+
+    def random_elements(
+        self,
+        elements: ElementsType = ("a", "b", "c"),
+        length: Optional[int] = None,
+        unique: bool = False,
+        use_weighting: Optional[bool] = None,
+    ) -> Sequence[T]:
+
+        use_weighting = use_weighting if use_weighting is not None else self.__use_weighting__
+
+        if isinstance(elements, dict) and not isinstance(elements, OrderedDict):
+            raise ValueError("Use OrderedDict only to avoid dependency on PYTHONHASHSEED (See #363).")
+
+        fn = choices_distribution_unique if unique else choices_distribution
+
+        if length is None:
+            length = self.generator.random.randint(1, len(elements))
+
+        if unique and length > len(elements):
+            raise ValueError("Sample length cannot be longer than the number of unique elements to pick from.")
+
+        if isinstance(elements, dict):
+            if not hasattr(elements, "_key_cache"):
+                elements._key_cache = tuple(elements.keys())  # type: ignore
+
+            choices = elements._key_cache  # type: ignore[attr-defined]
+            probabilities = tuple(elements.values()) if use_weighting else None
+        else:
+            if unique:
+                # shortcut
+                return self.generator.random.sample(elements, length)
+            choices = elements
+            probabilities = None
+
+        return fn(
+            tuple(choices),
+            probabilities,
+            self.generator.random,
+            length=length,
+        )
